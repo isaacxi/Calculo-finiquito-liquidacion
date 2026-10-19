@@ -1,0 +1,19 @@
+{
+  "country": "MX",
+  "currency": "MXN",
+  "uma_daily_2026": 113.14,
+  "min_aguinaldo_days": 15,
+  "min_vacation_bonus_pct": 0.25,
+  "vacation_table": [
+    { "years": 1, "days": 12 },
+    { "years": 2, "days": 14 },
+    { "years": 3, "days": 16 },
+    { "years": 4, "days": 18 },
+    { "years": 5, "days": 20 },
+    { "years_range": [6, 10], "days": 22 },
+    { "years_range": [11, 15], "days": 24 },
+    { "years_range": [16, 20], "days": 26 },
+    { "years_range": [21, 25], "days": 28 },
+    { "years_range": [26, 30], "days": 30 }
+  ]
+}
