@@ -1,113 +1,29 @@
-<!DOCTYPE html>
-<html lang="es-MX">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Finiquito y Liquidación México | LFT 2026</title>
-  <meta name="description" content="Calcula gratis tu finiquito y liquidación en México conforme a la Ley Federal del Trabajo.">
-  <meta name="robots" content="index, follow">
-  
-  <!-- Schema.org Microdatos para SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Calculadora de Finiquito y Liquidación México",
-    "url": "https://finiquito-eight.vercel.app/",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "MXN"
-    }
-  }
-  </script>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- html2pdf CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
-
-  <header class="bg-blue-900 text-white py-4 shadow-md">
-    <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <i data-lucide="calculator" class="w-6 h-6 text-blue-400"></i>
-        <h1 class="text-xl font-bold tracking-tight">FiniquitoMx</h1>
-      </div>
-      <span class="text-xs bg-blue-800 text-blue-200 px-2.5 py-1 rounded-full font-medium">LFT 2026</span>
-    </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
-    <div class="text-center mb-8">
-      <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Calculadora de Finiquito y Liquidación</h2>
-      <p class="text-slate-600 mt-2">Cálculos precisos basados en aniversarios laborales y salarios mínimos vigentes.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-      <!-- Formulario -->
-      <div class="md:col-span-7 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-        <form id="calcForm" class="space-y-4">
-          <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-1">Sueldo</label>
-            <div class="grid grid-cols-3 gap-2">
-              <div class="col-span-2 relative">
-                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-bold">$</span>
-                <input type="number" id="salario" step="0.01" required placeholder="15000" class="pl-8 w-full rounded-lg border border-slate-300 p-2.5 outline-none focus:ring-2 focus:ring-blue-600">
-              </div>
-              <select id="frecuencia" class="rounded-lg border border-slate-300 p-2.5 outline-none focus:ring-2 focus:ring-blue-600 text-sm">
-                <option value="mensual" selected>Mensual</option>
-                <option value="quincenal">Quincenal</option>
-                <option value="diario">Diario</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-semibold text-slate-700 mb-1">Fecha de Ingreso</label>
-              <input type="date" id="fechaIngreso" required class="w-full rounded-lg border border-slate-300 p-2.5 outline-none focus:ring-2 focus:ring-blue-600">
-            </div>
-            <div>
-              <label class="block text-sm font-semibold text-slate-700 mb-1">Fecha de Salida</label>
-              <input type="date" id="fechaSalida" required class="w-full rounded-lg border border-slate-300 p-2.5 outline-none focus:ring-2 focus:ring-blue-600">
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-1">Motivo de Salida</label>
-            <select id="tipoBaja" class="w-full rounded-lg border border-slate-300 p-2.5 outline-none focus:ring-2 focus:ring-blue-600">
-              <option value="renuncia" selected>Renuncia Voluntaria (Finiquito)</option>
-              <option value="despido_injustificado">Despido Injustificado (Liquidación)</option>
-            </select>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-medium text-slate-500 mb-1">Vacaciones Pendientes (Años prev.)</label>
-              <input type="number" id="diasVacacionesPendientes" value="0" min="0" class="w-full rounded-lg border border-slate-200 p-2 text-sm text-slate-700">
-            </div>
-            <div>
-              <label class="block text-xs font-medium text-slate-500 mb-1">Zona Salario Mínimo (Antigüedad)</label>
-              <select id="zonaSalarioMinimo" class="w-full rounded-lg border border-slate-200 p-2 text-sm text-slate-700">
-                <option value="general" selected>Resto del País ($315.04)</option>
-                <option value="fronteraNorte">Frontera Norte ($440.87)</option>
-              </select>
-            </div>
-          </div>
-
-          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 mt-4">
-            <i data-lucide="calculator" class="w-5 h-5"></i>
-            Calcular Prestaciones
-          </button>
-        </form>
+<!-- Marco Normativo y Fundamento Legal LFT 2026 -->
+    <section class="bg-slate-100 p-6 rounded-2xl border border-slate-200 text-xs text-slate-600 space-y-4">
+      <div class="flex items-center gap-2 font-bold text-slate-800 text-sm">
+        <i data-lucide="scale" class="w-4 h-4 text-blue-700"></i>
+        <span>Fundamento Legal y Marco Normativo Considerado (LFT 2026)</span>
       </div>
 
-      <!-- Resultados -->
-      <div class="md:
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 leading-relaxed">
+        <div>
+          <p class="font-semibold text-slate-700 mb-1">Ley Federal del Trabajo (LFT México):</p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li><strong>Vacaciones Dignas y Prima:</strong> Arts. 76, 79 y 80 (Derecho a 12 días mínimos desde el año 1 y prima vacacional mínima del 25%).</li>
+            <li><strong>Aguinaldo:</strong> Art. 87 (Mínimo 15 días de salario por año completo o su parte proporcional).</li>
+            <li><strong>Indemnización Constitucional:</strong> Arts. 48 y 50 (Pago de 90 días de Salario Diario Integrado por despido injustificado).</li>
+            <li><strong>Prima de Antigüedad:</strong> Arts. 162 y 486 (12 días por año laborado, topado a dos veces el salario mínimo aplicable).</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-semibold text-slate-700 mb-1">Parámetros Oficiales Vigentes en 2026:</p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li><strong>Salario Mínimo General:</strong> $315.04 MXN diarios (Resolución del Consejo de Representantes de la CONASAMI).</li>
+            <li><strong>Salario Mínimo Zona Libre Frontera Norte:</strong> $440.87 MXN diarios (Baja California, Sonora, Chihuahua, Coahuila, Nuevo León, Tamaulipas).</li>
+            <li><strong>Tope de Prima de Antigüedad:</strong> $630.08 MXN (Zona General) y $881.74 MXN (Frontera Norte) diarios.</li>
+            <li><strong>Versión de Calculadora:</strong> v1.2.0 (Motor LFT Octubre 2026).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
