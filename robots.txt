@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tu-dominio-o-vercel.app/sitemap.xml
+Sitemap: https://finiquito-eight.vercel.app/sitemap.xml
